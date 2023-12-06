@@ -22,7 +22,7 @@ project(libsamplerate VERSION 0.2.2 LANGUAGES C)
 # Configuration
 
 if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-  set(IS_ROOT_PROJECT ON)
+  set(IS_ROOT_PROJECT OFF)
 else()
   set(IS_ROOT_PROJECT OFF)
 endif()
@@ -115,19 +115,6 @@ endif()
 # SampleRate library
 
 add_subdirectory(src)
-
-# Tests
-
-# BUILD_TESTING is declared by CTest module and is ON by default
-if(BUILD_TESTING)
-  add_subdirectory(tests)
-endif()
-
-# Examples
-
-if(LIBSAMPLERATE_EXAMPLES)
-  add_subdirectory(examples)
-endif()
 
 configure_file(config.h.cmake config.h)
 
