@@ -15,8 +15,11 @@ buildiOS() {
         -DCMAKE_CXX_COMPILER_WORKS=YES \
         -DCMAKE_IOS_INSTALL_COMBINED=YES \
         -DCMAKE_C_COMPILER_WORKS=YES \
+        -DLIBSAMPLERATE_ENABLE_SINC_BEST_CONVERTER=OFF \
+        -DLIBSAMPLERATE_ENABLE_SINC_MEDIUM_CONVERTER=OFF \
         -DCMAKE_XCODE_ATTRIBUTE_GCC_GENERATE_DEBUGGING_SYMBOLS=YES \
-        -DCMAKE_INSTALL_PREFIX=./build-ios/install-$sdk
+        -DCMAKE_INSTALL_PREFIX=./build-ios/install-$sdk \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
     cmake --build ./build-ios --config Release
     mkdir -p ./build-ios/install-$sdk/lib/
