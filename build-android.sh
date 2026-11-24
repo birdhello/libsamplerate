@@ -8,6 +8,7 @@ buildAndroid() {
         -B ./build-android/${abi} \
         -DCMAKE_SYSTEM_NAME=Android \
         -DCMAKE_TRY_COMPILE_TARGET_TYPE=STATIC_LIBRARY \
+        -DCMAKE_BUILD_TYPE=Release \
         -DANDROID_PLATFORM=android-21 \
         -DANDROID_ABI=${abi} \
         -DBUILD_TESTING=OFF \
